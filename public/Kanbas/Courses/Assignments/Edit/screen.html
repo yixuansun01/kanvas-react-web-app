@@ -117,91 +117,120 @@
                         </span>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                       </div>  
-                      <hr />       
+                           
                 </div>
+                <hr/>
             </div>
-    
-    
-            <table>
-                <tbody>
-                    <tr>
-                        <label for ="wd-assignment-name">Assignment Name</label>
-                        <input class="form-control"
-                        value="A1- ENV + HTML" id ="wd-assignment-name"/>
-                        <br/>
-                        <br/>
-                    </tr>
-                    <tr>
-                    <textarea  class="form-control" cols="25" rows="5"
+            
+            <div class="container">
+              <div class ="row mt-2 mb-2">
+                <label for ="wd-assignment-name">Assignment Name</label>
+              </div>
+
+            <div class ="row mt-2 mb-2">   
+                <input class="form-control"
+                value="A1- ENV + HTML" id ="wd-assignment-name"/>
+            </div>
+
+            <div class ="row mt-4 mb-2">   
+              <textarea  class="form-control" cols="25" rows="5"
                     >This is the assignment description.</textarea>
-                    <br />
-                    <br />
-                    </tr>
-                    <tr>
-                        <td>Points</td>
-                        <td>
-                            <input class="form-control" id="points" value="100" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Assignment Group</td>
-                        <td>
+            </div>
+           
+
+              <div class="row mt-2 mb-2">
+                  <div class="col-3 d-flex justify-content-end">
+                    <label>Points</label>
+                    </div>
+                    <div class="col-6 d-flex justify-content-start" >
+                      <input class="form-control" id="points" value="100" />
+                    </div>         
+               </div>
+
+               <div class="row mt-2 mb-2">
+                <div class="col-3 d-flex justify-content-end">
+                  <label>Assignment Group</label>
+                  </div>
+                  <div class="col-6 d-flex justify-content-start" >
+                    <select class="form-control">
+                      <option>ASSIGNMENT</option>
+                      <option>QUIZ</option>
+                      <option>EXAM</option>
+                      <option>PROJECT</option>
+                    </select>
+                  </div>         
+                </div>
+
+                <div class="row mt-2 mb-2">
+                  <div class="col-3 d-flex justify-content-end">
+                    <label>Display Grade as</label>
+                    </div>
+                    <div class="col-6 d-flex justify-content-start" >
+                      <select class="form-control">
+                        <option>Percentage</option>
+                        <option>Number</option>
+                     </select>
+                    </div>         
+                  </div>
+
+                  <div class="row mt-2 mb-2">
+                    <div class="col-3 d-flex justify-content-end">
+                      <label>Submission Type</label>
+                      </div>
+                      <div class="col-6 d-flex justify-content-start" >
+                        <select class="form-control">
+                          <option>Online</option>
+                          <option>Inpersoon</option>
+                        </select>
+                      </div>         
+                   </div>
+
+                   <div class="row mt-2 mb-2">
+                    <div class="col-3 d-flex justify-content-end">
+                      <label>Assign</label>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                            <label>Assign to</label>
                             <select class="form-control">
-                                <option>ASSIGNMENT</option>
-                                <option>QUIZ</option>
-                                <option>EXAM</option>
-                                <option>PROJECT</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Display Grade as</td>
-                        <td>
-                            <select class="form-control">
-                                <option>Percentage</option>
-                                <option>Number</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Submission Type</td>
-                        <td>
-                            <select class="form-control">
-                                <option>Online</option>
-                                <option>Inpersoon</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Assign</td>
-                        <td>
-                            <br />
-                            <label >Assign to</label> <br />
-                            <select  class="form-control">
                                 <option>Everyone</option>
                                 <option>Only myself</option>
                             </select>
-                            <br />
-                            <br />
-                    
-                            <label >Due Date</label> <br />
-                            <input  class="form-control"
-                            type="date" value="2023-09-18"/> <br />
-                            <br />
-                    
-                            <label>Availabel from</label> <br />
-                            <input   class="form-control"
-                            type="date" value="2023-09-06"/> <br />
-                            <br />
-                    
-                            <label>Until</label> <br />
-                            <input   class="form-control"
-                            type="date" value="2021-01-01"/> <br />
-                            <br />
-                        </td>
-                    </tr>    
-                </tbody>
-            </table> 
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Due Date</label>
+                            <input class="form-control" type="date" value="2023-09-18">
+                        </div>
+                        
+                        <div class="row">
+                          <!-- Part 1: Available from -->
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label>Available from</label>
+                                  <input class="form-control" type="date" value="2023-09-06">
+                              </div>
+                          </div>
+                      
+                          <!-- Part 2: Until -->
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label>Until</label>
+                                  <input class="form-control" type="date" value="2021-01-01">
+                              </div>
+                          </div>
+                      </div>
+                       
+                      
+                        
+                    </div>
+                          
+                   </div>
+  
+             
+            </div>
+    
+           
             <hr />
             <div style="text-align: right;">
                 <a href="/Kanbas/Courses/Assignments/screen.html" 
