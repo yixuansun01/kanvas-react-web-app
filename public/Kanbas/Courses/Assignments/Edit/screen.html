@@ -189,39 +189,40 @@
                     <div class="col-3 d-flex justify-content-end">
                       <label>Assign</label>
                       </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                            <label>Assign to</label>
-                            <select class="form-control">
+                      <div class="col-6 mt-2 mb-2">
+                        <div class="form-group"  style="margin-bottom: 20px;">
+                            <label mb-2>Assign to</label>
+                            <select class="form-control ">
                                 <option>Everyone</option>
                                 <option>Only myself</option>
                             </select>
                         </div>
                         
-                        <div class="form-group">
+                        <div class="form-group" style="margin-bottom: 20px;">
                             <label>Due Date</label>
                             <input class="form-control" type="date" value="2023-09-18">
                         </div>
                         
-                        <div class="row">
-                          <!-- Part 1: Available from -->
+                        <div class="row mt-2 mb-2">
                           <div class="col-md-6">
-                              <div class="form-group">
+                              <div class="form-group" style="margin-bottom: 20px;">
                                   <label>Available from</label>
                                   <input class="form-control" type="date" value="2023-09-06">
                               </div>
                           </div>
-                      
-                          <!-- Part 2: Until -->
                           <div class="col-md-6">
-                              <div class="form-group">
+                              <div class="form-group" style="margin-bottom: 20px;">
                                   <label>Until</label>
                                   <input class="form-control" type="date" value="2021-01-01">
                               </div>
                           </div>
                       </div>
-                       
-                      
+
+                      <div class="row bg-light text-center align-items-center" style="height: 50px;">
+                        <div class="col">
+                            <i class="fa-solid fa-plus"></i> Add
+                        </div>
+                    </div>
                         
                     </div>
                           
@@ -232,16 +233,21 @@
     
            
             <hr />
-            <div style="text-align: right;">
-                <a href="/Kanbas/Courses/Assignments/screen.html" 
-                class="btn btn-default" style="border: 1px solid gray;">Cancel</a>
-                <a href="/Kanbas/Courses/Assignments/screen.html" 
-                class="btn btn-default" style="border: 1px solid gray;background-color: red; color: white;">Save</a>
-                
-                
-              </div> <br/><br/>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              
+              <div>
+                  <input type="checkbox" >
+                  <label >Notify users that this content has changed</label>
+              </div>
+              
+              <div>
+                  <a href="/Kanbas/Courses/Assignments/screen.html" class="btn btn-default" style="border: 1px solid gray;">Cancel</a>
+                  <a href="/Kanbas/Courses/Assignments/screen.html" class="btn btn-default" style="border: 1px solid gray; background-color: red; color: white;">Save</a>
+              </div>
+          </div><br/>
             
-            
+              <hr />
 
           </div>
           
