@@ -1,5 +1,12 @@
 <html>
-    <head></head>
+    <head>
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/libs/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="/Kanbas/styles.css" />
+    <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
+    </head>
     <body>
         <table width ="100%">
             <tbody>
@@ -56,96 +63,103 @@
                         <li><a href="#">
                             Settings</a></li>
                       </ul></td>
-                    <td valign ="top"> 
-                        <form action="/Kanbas/Courses/Assignments/screen.html">
-                            <select>
-                            <option>Speed Grader</option>
-                            </select>
-                    <hr />
-                    <h2>Assignment Name</h2>
-                    <input value="A1- ENV + HTML" />
-                    <br/>
-                    <br/>
-                    <textarea  cols="25" rows="5"
-                    >This is the assignment description.</textarea>
-                    <br />
-                    <br />
-                    <label for = "points">Points</label><br />
-                    <input id="points" value="100" />
-                    <br />
-                    <br />
-                    <label>Assignment Group</label> <br />
-                    <select>
-                        <option>ASSIGNMENT</option>
-                        <option>QUIZ</option>
-                        <option>EXAM</option>
-                        <option>PROJECT</option>
-                    </select>
-                    <br />
-                    <br />
-            
-                    <label>Display Grade as</label> <br />
-                    <select>
-                        <option>Percentage</option>
-                        <option>Number</option>
-                    </select>
-                    <br />
-                    <br />
-            
-                    <label>Submission Type</label> <br />
-                    <select>
-                        <option>Online</option>
-                        <option>Inpersoon</option>
-                    </select>
-                    <br />
-                    <br />
-            
-                    <label>Online Entry Options</label> <br />
-                    <label><input type="checkbox" name="online-entry-options" /> Text Entry </label><br />
-                    <label><input type="checkbox" name="online-entry-options"/> Website URL </label><br />
-                    <label><input type="checkbox" name="online-entry-options"/> Media Recordings </label><br />
-                    <label><input type="checkbox" name="online-entry-options"/> Student AnnotationL </label><br />
-                    <label><input type="checkbox" name="online-entry-options"/>  File Uploads </label><br />
-                    <br />
-                    <br />
-
-                    <label>Group Assignments</label> <br />
-                    <label><input type="checkbox" name="group-assignments" /> A1 </label><br />
-                    <label><input type="checkbox" name="group-assignments"/> A2 </label><br />
-                    <label><input type="checkbox" name="group-assignments"/> A3 </label><br />
-                    <br />
-                    <br />
-
-                    <label>Peer Reviews</label> <br />
-                    <label><input type="checkbox" name="peer-reviews" /> Review for Member1 </label><br />
-                    <label><input type="checkbox" name="peer-reviews"/> Review for Member2 </label><br />
-                    <label><input type="checkbox" name="peer-reviews"/>Review for Member3 </label><br />
-                    <br />
-                    <br />
-            
-                    <label>Assign</label> <br />
-                    <label>Assign to</label> <br />
-                    <select>
-                        <option>Everyone</option>
-                        <option>Only myself</option>
-                    </select>
-                    <br />
-                    <br />
-            
-                    <label>Due Date</label> <br />
-                    <input type="date" value="2021-01-01"/> <br />
-                    <br />
-            
-                    <label>Availabel from</label> <br />
-                    <input type="date" value="2021-01-01"/> <br />
-                    <br />
-            
-                    <label>Until</label> <br />
-                    <input type="date" value="2021-01-01"/> <br />
-                    <br />
-                   <button>Cancel</button>
-                    <button>Save</button>
-                
+                    <td valign ="top">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <div style="text-align: right;">
+                                    <i class="fa-solid fa-circle-check" style="color: green;"></i>
+                                  
+                                    <span style="color: green;">
+                                        Published
+                                    </span>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                  </div>
+                            <hr />
+                            </tr>
+                            <tr>
+                                <label for ="wd-assignment-name">Assignment Name</label>
+                                <input class="form-control"
+                                value="A1- ENV + HTML" id ="wd-assignment-name"/>
+                                <br/>
+                                <br/>
+                            </tr>
+                            <tr>
+                            <textarea  class="form-control" cols="25" rows="5"
+                            >This is the assignment description.</textarea>
+                            <br />
+                            <br />
+                            </tr>
+                            <tr>
+                                <td>Points</td>
+                                <td>
+                                    <input class="form-control" id="points" value="100" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Assignment Group</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option>ASSIGNMENT</option>
+                                        <option>QUIZ</option>
+                                        <option>EXAM</option>
+                                        <option>PROJECT</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Display Grade as</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option>Percentage</option>
+                                        <option>Number</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Submission Type</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option>Online</option>
+                                        <option>Inpersoon</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Assign</td>
+                                <td>
+                                    <br />
+                                    <label >Assign to</label> <br />
+                                    <select  class="form-control">
+                                        <option>Everyone</option>
+                                        <option>Only myself</option>
+                                    </select>
+                                    <br />
+                                    <br />
+                            
+                                    <label >Due Date</label> <br />
+                                    <input  class="form-control"
+                                    type="date" value="2023-09-18"/> <br />
+                                    <br />
+                            
+                                    <label>Availabel from</label> <br />
+                                    <input   class="form-control"
+                                    type="date" value="2023-09-06"/> <br />
+                                    <br />
+                            
+                                    <label>Until</label> <br />
+                                    <input   class="form-control"
+                                    type="date" value="2021-01-01"/> <br />
+                                    <br />
+                                </td>
+                            </tr>    
+                        </tbody>
+                    </table> 
+                    <div style="text-align: right;">
+                        <button >Cancel</button>
+                        <button style="background-color: red; color: white;">Save</button>
+                      </div> <br/><br/>
+                    
                     </form>
                     </td>
                 </tr>

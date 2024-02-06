@@ -1,0 +1,22 @@
+.wd-sidebar-navigation {
+    background-color: white;
+    list-style: none;
+    padding: 0px;  margin: 0px;
+    width: 80px;
+  }
+  .wd-sidebar-navigation li {
+    padding: 10px;     margin-bottom: 10px;
+    font-size: 0.8em;  text-align: center;
+  }
+ 
+ 
+  .wd-sidebar-navigation a {
+    color: red;
+    text-decoration: none;
+  }
+  .wd-sidebar-navigation a i {
+    color: red;
+    font-size: 2em;
+    margin-bottom: 5px;
+  }
+  

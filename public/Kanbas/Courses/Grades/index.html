@@ -1,221 +1,229 @@
 <html>
-    <head></head>
+    <head>
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/libs/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="/Kanbas/styles.css" />
+    <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" />
+    
+    
+    </head>
     <body>
-        
-        <table width="100%">
-            <tbody>
-                <tr>
+   
+
+        <div class="container">
+           
+            <div class="row">
+                <div class="col-8">
+                  </div>
+                  
+                  <div class="col d-flex justify-content-end" >
+                    <button  style="margin-right: 10px;">
+                        <i class="fa-solid fa-file-import"></i>
+                        Import
+                    </button>
+                    <button style="margin-right: 10px;">
+                        <i class="fa-solid fa-file-export fa-flip-horizontal" ></i>
+                        Export</button>
+                    <button type="button" class="btn btn-outline-dark btn-sm ">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+                  </div>         
+            </div>
+
+            <div class="row">
+                <div class="col-6 d-flex justify-content-start">
+                        <label for="student-search">Student Names</label>
+                  </div>
+                    <div class="col-6 d-flex justify-content-start" >
+                        <label for="assignment-name">Assigment Names</label>
+                    </div>         
+                 </div>
+            <div class="row">
+                <div class="col-6 d-flex justify-content-start">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <select class="form-select">
+                        <option selected> Search Students</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>     
+    
+                <div class="col-6 d-flex justify-content-start" >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <select class="form-select">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>        
+                </div>         
+            </div>
+            <div class="row" style="margin: 10px;">
+                <div class="col-2" >
+                    <button>
+                    <i class="fa-solid fa-filter"></i>
+                    Apply Filters</button>
+                </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-striped ">
+                <thead>
+                  <tr>
+                    <th scope="col" >Student Names</th>
+                    <th scope="col" >
+                        <div >A1 SETUP</div>
+                        <div >Out of 100</div>
+                    </th>
+                    <th scope="col" >
+                        <div >A2 HTML</div>
+                        <div >Out of 100</div>
+                    </th>
+                    <th scope="col" >
+                        <div >A3 CSS</div>
+                        <div >Out of 100</div>
+                    </th>
+                    <th scope="col" >
+                        <div >A4 BOOTSTRAP</div>
+                        <div >Out of 100</div>
+                    </th>
+
+                    <th scope="col" >
+                        <div >A5 Javacript</div>
+                        <div >Out of 100</div>
+                    </th>
+
+
+                    <th scope="col" >
+                        <div >A6 Session6</div>
+                        <div >Out of 100</div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="color: red;">Doxa Asibey</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>89.59%</td>
+                    <td>98.65%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                  </tr>
+
+                  <tr>
+                    <td style="color: red;">Thuy Tien Buil</td>
+                    <td>100%</td>
+                    <td>100%</td>
                     <td>
-                        <select>
-                            <option>Gradebook</option>
-                            <option>Change Gradebook view</option>
-                            <option>Traditional Gradebook</option>
-                            <option>Individual Gradebook</option>
-                        </select>
+                        <input value = "91.5%" style="width: 80px;">
+                        <button type="button" class="btn btn-outline-dark btn-sm ">
+                            <i class="fa-solid fa-arrow-right"></i> 
+                        </button>
                     </td>
-                    <td>
-                        <button>Shortcuts</button>
-                        <button>Imports</button>
-                        <select>
-                            <option>Export</option>
-                            <option>Export Current Gradebook View</option>
-                            <option>Export Entire Gradebook</option>
-                        </select>
-                        <button>Configure</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <h4>Student Names </h4>
-                    <input placeholder="Search Students"/><br/>
-                        <select>
-                            <option>John Doe</option>
-                            <option>Jane Doe</option>
-                            <option>Alice Wonderland</option>
-                            <option>Charlie Brown</option>
-                        </select>
-                        <br/>
-                    </td>
-                </tr>
-                <tr></tr>
-                <tr>
-                    <td>
-                        <h4>Assignment Names </h4>
-                        <input placeholder="Search Assignments"/><br/>
-                        <select>
-                            <option>A1</option>
-                            <option>A2</option>
-                            <option>Q1</option>
-                            <option>Exam1</option>
-                        </select>
-                        <br/>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <button>Apply Filters</button>
-        <table width="100%" border="1">
-            <thead>
-                <tr>
-                    <th>Student Name</th>
-                    <th>A1 SETUP Out of 100</th>
-                    <th>A2 HTML Out of 100</th>
-                    <th>A3 CSS Out of 100</th>
-                    <th>A4 BOOTSTRAO Out of 100</th>
-                    <th>A5 JAVASCRIPT Out of 100</th>
-                    <th>A6 REDUX Out of 100</th>
-                    <th>A7 REDUX Out of 100</th>
-                    <th>A8 NODE Out of 100</th>
-                    <th>A9 MONGO Out of 100</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Alice Wonderland</td>
-                    <td>98</td>
-                    <td>89</td>
-                    <td>87</td>
-                    <td>90</td>
-                    <td>89</td>
-                    <td>94</td>
-                    <td>88</td>
-                    <td>87</td>
-                    <td>100</td>
-                </tr>
-                <tr>
-                    <td>Princes Leia</td>
-                    <td>98</td>
-                    <td>80</td>
-                    <td>87</td>
-                    <td>86</td>
-                    <td>100</td>
-                    <td>94</td>
-                    <td><input value = "85"></td>
-                    <td>84</td>
-                    <td>92</td>
-                </tr>
-                <tr>
-                    <td>Luke Skywalker</td>
-                    <td><input value ="99"></td>
-                    <td>88</td>
-                    <td>97</td>
-                    <td>82</td>
-                    <td>96</td>
-                    <td>93</td>
-                    <td>95</td>
-                    <td>100</td>
-                    <td>93</td>
-                </tr>
-                <tr>
-                    <td>Han Solo</td>
-                    <td>83</td>
-                    <td>99</td>
-                    <td>94</td>
-                    <td>98</td>
-                    <td><input value ="86"></td>
-                    <td>85</td>
-                    <td>86</td>
-                    <td>80</td>
-                    <td>84</td>
-                </tr>
-                <tr>
-                    <td>Lando Calresian</td>
-                    <td>83</td>
-                    <td><input value ="92"></td>
-                    <td>80</td>
-                    <td>80</td>
-                    <td>92</td>
-                    <td>92</td>
-                    <td>94</td>
-                    <td>87</td>
-                    <td>95</td>
-                </tr>
-                <tr>
-                    <td>Boba Fet</td>
-                    <td>85</td>
-                    <td>89</td>
-                    <td>94</td>
-                    <td>83</td>
-                    <td>83</td>
-                    <td>84</td>
-                    <td>91</td>
-                    <td>87</td>
-                    <td>96</td>
-                </tr>
-                <tr>
-                    <td>Darth Vader</td>
-                    <td>81</td>
-                    <td>81</td>
-                    <td><input value ="96"></td>
-                    <td>80</td>
-                    <td>89</td>
-                    <td>88</td>
-                    <td>82</td>
-                    <td>80</td>
-                    <td>82</td>
-                </tr>
-                <tr>
-                    <td>Obi-Wan Kenobi</td>
-                    <td><input value ="85"></td>
-                    <td>99</td>
-                    <td>87</td>
-                    <td>82</td>
-                    <td>88</td>
-                    <td>83</td>
-                    <td>88</td>
-                    <td>92</td>
-                    <td>80</td>
-                </tr>
-                <tr>
-                    <td>R2-D2</td>
-                    <td>81</td>
-                    <td><input value ="92"></td>
-                    <td><input value ="82"></td>
-                    <td>86</td>
-                    <td>83</td>
-                    <td><input value ="84"></td>
-                    <td>98</td>
-                    <td>85</td>
-                    <td>96</td>
-                </tr>
-                <tr>
-                    <td>C-3PO</td>
-                    <td>94</td>
-                    <td>98</td>
-                    <td>83</td>
-                    <td>83</td>
-                    <td>100</td>
-                    <td>96</td>
-                    <td>96</td>
-                    <td>85</td>
-                    <td>87</td>
-                </tr>
-                <tr>
-                    <td>Yoda</td>
-                    <td>80</td>
-                    <td>89</td>
-                    <td>99</td>
-                    <td>89</td>
-                    <td>96</td>
-                    <td>85</td>
-                    <td>96</td>
-                    <td>92</td>
-                    <td>85</td>
-                </tr>
-                <tr>
-                    <td>Admiral Ackbar</td>
-                    <td>82</td>
-                    <td>88</td>
-                    <td>95</td>
-                    <td>100</td>
-                    <td><input value ="93"></td>
-                    <td>98</td>
-                    <td>85</td>
-                    <td>87</td>
-                    <td>99</td>
-                    
-                </tr>
-            </tbody>
-        </table>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                  </tr>
+                  
+                  <tr>
+                    <td style="color: red;">Yetong Chen</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>89.59%</td>
+                    <td>98.65%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                  </tr>
+
+                  <tr>
+                    <td style="color: red;">Zhenyu Chen</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>98.59%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                  </tr>
+
+                  <tr>
+                    <td style="color: red;">Yung-Shin Chen</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                  </tr>
+
+
+                  <tr>
+                    <td style="color: red;">Basil Coughlan</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                  </tr>
+
+                  <tr>
+                    <td style="color: red;">Rachel Dao</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                  </tr>
+
+                  <tr>
+                    <td style="color: red;">Lana Do</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                  </tr>
+
+                  <tr>
+                    <td style="color: red;">Kartikey Dwivedi</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                  </tr>
+
+                  <tr>
+                    <td style="color: red;">Jiarong Feng</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                  </tr>
+
+                  <tr>
+                    <td style="color: red;">Saurabh Sunil Gade</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                    <td>100%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
     </body>
 </html>
