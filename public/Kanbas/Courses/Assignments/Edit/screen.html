@@ -1,168 +1,224 @@
 <html>
-    <head>
+  <head>
     <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="/libs/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="/Kanbas/styles.css" />
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
-    </head>
-    <body>
-        <table width ="100%">
-            <tbody>
-                <tr>
-                    <td valign ="top"> <ul>
-                        <li><a href="/Kanbas/Account/Profile/screen.html">
-                           Account</a></li>
-                        <li>
-                         <a href="/Kanbas/Dashboard/screen.html">Dashboard</a>
-                        </li>
-                        <li>
-                         <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
-                        </li>
-                        <li>
-                         <a href="/Kanbas/Calendar/index.html">Calendar</a></li>
-                        <li><a href="/Kanbas/Inbox/index.html">Inbox</a></li>
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Studio</a></li>
-                        <li><a href="#">Commons</a></li>
-                        <li><a href="#">Help</a></li>
-                    </ul></td>
-                    <td valign ="top">  <ul>
-                        <li>
-                          <a href="/Kanbas/Courses/Home/screen.html">
-                            Home</a></li>
-                        <li><a href="/Kanbas/Courses/Modules/screen.html">
-                            Modules</a></li>
-                        <li><a href="/Kanbas/Courses/Piazza/index.html">
-                            Piazza</a></li>
-                        <li><a href="/Kanbas/Courses/Grades/screen.html">
-                            Grades</a></li>
-                        <li><a href="/Kanbas/Courses/Assignments/screen.html">
-                            Assignments</a></li>
-                        <li><a href="#">
-                            Quizzes</a></li>
-                        <li><a href="#">
-                            People</a></li>
-                        <li><a href="#">
-                            Panopto Video</a></li>
-                        <li><a href="#">
-                            Discussions</a></li>
-                        <li><a href="#">
-                            Announcement</a></li>
-                        <li><a href="#">
-                            Pages</a></li>
-                        <li><a href="#">
-                            Files</a></li> 
-                        <li><a href="#">
-                            Rubrics</a></li>  
-                        <li><a href="#">
-                            Outcomes</a></li>
-                        <li><a href="#">
-                            Collaborations</a></li>
-                        <li><a href="#">
-                            Settings</a></li>
-                      </ul></td>
-                    <td valign ="top">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <div style="text-align: right;">
-                                    <i class="fa-solid fa-circle-check" style="color: green;"></i>
-                                  
-                                    <span style="color: green;">
-                                        Published
-                                    </span>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                                  </div>
-                            <hr />
-                            </tr>
-                            <tr>
-                                <label for ="wd-assignment-name">Assignment Name</label>
-                                <input class="form-control"
-                                value="A1- ENV + HTML" id ="wd-assignment-name"/>
-                                <br/>
-                                <br/>
-                            </tr>
-                            <tr>
-                            <textarea  class="form-control" cols="25" rows="5"
-                            >This is the assignment description.</textarea>
+    <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" />
+    
+  </head>
+  <body>
+    <div class="d-flex">
+        <div class="d-none d-md-block">
+            <ul class="wd-kanbas-navigation">
+                <li><a href="http://northeastern.edu">N</a></li>
+                <li><a href="/Kanbas/Account/Profile/screen.html">
+                  <i class="fa-regular fa-user"  style="color: white;"></i>
+                  Account</a></li>
+                <li class="wd-active">
+                  <a href="/Kanbas/Dashboard/screen.html">
+                    <i class="fa fa-tachometer"></i> Dashboard</a>
+                </li>
+                <li><a href="/Kanbas/Courses/Home/screen.html">
+                  <i class="fa-solid fa-book"></i>
+                  Courses</a> </li>
+                <li><a href="#"><i class="fa fa-calendar"></i> Calendar</a></li>
+                <li><a href="#">
+                  <i class="fa-solid fa-envelope-open-text"></i>
+                  Inbox</a></li>
+                <li><a href="#">
+                  <i class="fa-regular fa-clock"></i>
+                  History</a></li>
+                <li><a href="#">
+                  <i class="fa-solid fa-tv"></i>
+                  Studio</a></li>
+                <li><a href="#">
+                  <i class="fa-solid fa-circle-arrow-right"></i>
+                  Commons</a></li>
+                <li><a href="#">
+                  <i class="fa-regular fa-circle-question"></i>
+                  <div>Help</div>
+                </a></li>
+              </ul>
+        </div>  
+    <div class="container-fluid">
+        <!-- Breadcrumb Row -->
+        <div class="row">
+            <div class="d-none d-md-block">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <i class="fa-solid fa-bars" style="margin-right: 10px;color: red;"></i>
+                  <li class="breadcrumb-item"><a href="#" style="color: red;">CS5610.11744.202310</a></li>
+                  <li class="breadcrumb-item"><a href="#" style="color: red;">Assignments</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">A1-ENV</li>
+                </ol>
+            </nav>
+            <hr>
+            </div>
+            
+ 
+        </div>
+      
+        <!-- Flex Container for Sidebar and Content -->
+        <div class="d-flex flex-column flex-md-row">
+          
+          <div class="d-none d-md-block">
+            <ul class="wd-navigation">
+                <li >
+                    <a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                  <li >
+                    <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                  </li>
+                  <li><a href="http://piazza.com">Piazza</a></li>
+                  <li><a href="#">Zoom</a></li>
+                  <li class="wd-active">
+                    <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                  </li>
+                  <li><a href="#">Quizzes</a></li>
+                  <li ><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                  <li><a href="#">People</a></li>
+                  <li><a href="#">
+                    Panopto Video</a></li>
+                <li><a href="#">
+                    Discussions</a></li>
+                <li><a href="#">
+                    Announcement</a></li>
+                <li><a href="#">
+                    Pages</a></li>
+                <li><a href="#">
+                    Files</a></li> 
+                <li><a href="#">
+                    Rubrics</a></li>  
+                <li><a href="#">
+                    Outcomes</a></li>
+                <li><a href="#">
+                    Collaborations</a></li>
+                <li><a href="/Kanbas/Courses/Settings/Coursedetails/screen.html">
+                    Settings</a></li>
+            </ul>
+          </div>
+          
+          <!-- Main Content "column3" -->
+          <div class="flex-fill" style="margin-left: 30px;">
+            <div class="container-fluid">
+           
+                <div class="row">
+                    <div class="col-8">
+                      </div>
+                      
+                      <div class="col d-flex justify-content-end" >
+                        <i class="fa-solid fa-circle-check" style="color: green;"></i>
+                          
+                        <span style="color: green;  margin-right: 20px;">
+                            Published
+                        </span>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                      </div>  
+                      <hr />       
+                </div>
+            </div>
+    
+    
+            <table>
+                <tbody>
+                    <tr>
+                        <label for ="wd-assignment-name">Assignment Name</label>
+                        <input class="form-control"
+                        value="A1- ENV + HTML" id ="wd-assignment-name"/>
+                        <br/>
+                        <br/>
+                    </tr>
+                    <tr>
+                    <textarea  class="form-control" cols="25" rows="5"
+                    >This is the assignment description.</textarea>
+                    <br />
+                    <br />
+                    </tr>
+                    <tr>
+                        <td>Points</td>
+                        <td>
+                            <input class="form-control" id="points" value="100" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Assignment Group</td>
+                        <td>
+                            <select class="form-control">
+                                <option>ASSIGNMENT</option>
+                                <option>QUIZ</option>
+                                <option>EXAM</option>
+                                <option>PROJECT</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Display Grade as</td>
+                        <td>
+                            <select class="form-control">
+                                <option>Percentage</option>
+                                <option>Number</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Submission Type</td>
+                        <td>
+                            <select class="form-control">
+                                <option>Online</option>
+                                <option>Inpersoon</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Assign</td>
+                        <td>
+                            <br />
+                            <label >Assign to</label> <br />
+                            <select  class="form-control">
+                                <option>Everyone</option>
+                                <option>Only myself</option>
+                            </select>
                             <br />
                             <br />
-                            </tr>
-                            <tr>
-                                <td>Points</td>
-                                <td>
-                                    <input class="form-control" id="points" value="100" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Assignment Group</td>
-                                <td>
-                                    <select class="form-control">
-                                        <option>ASSIGNMENT</option>
-                                        <option>QUIZ</option>
-                                        <option>EXAM</option>
-                                        <option>PROJECT</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Display Grade as</td>
-                                <td>
-                                    <select class="form-control">
-                                        <option>Percentage</option>
-                                        <option>Number</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Submission Type</td>
-                                <td>
-                                    <select class="form-control">
-                                        <option>Online</option>
-                                        <option>Inpersoon</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Assign</td>
-                                <td>
-                                    <br />
-                                    <label >Assign to</label> <br />
-                                    <select  class="form-control">
-                                        <option>Everyone</option>
-                                        <option>Only myself</option>
-                                    </select>
-                                    <br />
-                                    <br />
-                            
-                                    <label >Due Date</label> <br />
-                                    <input  class="form-control"
-                                    type="date" value="2023-09-18"/> <br />
-                                    <br />
-                            
-                                    <label>Availabel from</label> <br />
-                                    <input   class="form-control"
-                                    type="date" value="2023-09-06"/> <br />
-                                    <br />
-                            
-                                    <label>Until</label> <br />
-                                    <input   class="form-control"
-                                    type="date" value="2021-01-01"/> <br />
-                                    <br />
-                                </td>
-                            </tr>    
-                        </tbody>
-                    </table> 
-                    <div style="text-align: right;">
-                        <button >Cancel</button>
-                        <button style="background-color: red; color: white;">Save</button>
-                      </div> <br/><br/>
                     
-                    </form>
-                    </td>
-                </tr>
-            </tbody>
-    </body>
+                            <label >Due Date</label> <br />
+                            <input  class="form-control"
+                            type="date" value="2023-09-18"/> <br />
+                            <br />
+                    
+                            <label>Availabel from</label> <br />
+                            <input   class="form-control"
+                            type="date" value="2023-09-06"/> <br />
+                            <br />
+                    
+                            <label>Until</label> <br />
+                            <input   class="form-control"
+                            type="date" value="2021-01-01"/> <br />
+                            <br />
+                        </td>
+                    </tr>    
+                </tbody>
+            </table> 
+            <hr />
+            <div style="text-align: right;">
+                <a href="/Kanbas/Courses/Assignments/screen.html" 
+                class="btn btn-default" style="border: 1px solid gray;">Cancel</a>
+                <a href="/Kanbas/Courses/Assignments/screen.html" 
+                class="btn btn-default" style="border: 1px solid gray;background-color: red; color: white;">Save</a>
+                
+                
+              </div> <br/><br/>
+            
+            
+
+          </div>
+          
+        </div>
+      
+      </div>
+    </div>
+    
+  </body>
 </html>
