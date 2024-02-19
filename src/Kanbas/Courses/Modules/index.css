@@ -1,0 +1,51 @@
+.wd-modules,
+.wd-modules * {
+  border-radius: 0%;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.wd-modules {
+  margin: 5px;
+}
+
+.wd-modules > li {
+  background-color: lightgray;
+  border: 1px solid gray !important;
+  border-left: none !important;
+}
+
+.wd-modules > li > div {
+  padding: 6px;
+  border-left: 1px solid gray !important;
+}
+
+.wd-modules > li > ul > li {
+  padding: 5px;
+  border-top: 1px solid gray !important;
+  border-left: 2px solid green;
+}
+
+.wd-modules > li {
+  margin-bottom: 20px;
+}
+
+/* styles.css */
+
+.header {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+  }
+  .header .fa-bars, .header .fa-chevron-down {
+    color: white; 
+  }
+  .header .course-title {
+    font-weight: bold;
+  }
+  .header .dropdown-toggle::after {
+    display: none; /* Hide the default dropdown arrow */
+  }
+  
+  

@@ -1,0 +1,18 @@
+.home-container {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+  }
+  
+  .module-list-container {
+    flex-grow: 1;
+    min-width: 300px;
+  }
+  
+  .status-container {
+    flex-basis: 200px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
