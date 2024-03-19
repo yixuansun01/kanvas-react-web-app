@@ -25,7 +25,8 @@ function Dashboard(
              onChange={(e) => setCourse({ ...course, endDate: e.target.value }) } />
 
 
-      <button onClick={addNewCourse} >
+      <button onClick={addNewCourse}
+      style={{ backgroundColor: 'red', color: 'white', marginRight: '15px' }} >
         Add
       </button>
       <button onClick={updateCourse} >

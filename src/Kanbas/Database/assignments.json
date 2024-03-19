@@ -1,35 +1,35 @@
 [
     { "_id": "A101", "title": "A1- ENV + HTML", "course": "RS101" 
-    ,"dueDate": "Sep 18 at 11:59pm","points": "100 pts", "availableFromDate": "Sep 1 ",
-    "availableUntilDate": "Sep 18 "},
+    ,"dueDate": "2023-09-15","points": "100 pts", "availableFromDate": "2023-09-01",
+    "availableUntilDate": "2023-09-15"},
     { "_id": "A102", "title": "A2 - CSS + BOOTSRAP", "course": "RS101" 
-    ,"dueDate": "October 18 at 11:59pm","points": "100 pts","availableFromDate": "Sep 1 ",
-    "availableUntilDate": "October 18 "},
+    ,"dueDate": "2023-10-15","points": "100 pts","availableFromDate": "2023-10-01",
+    "availableUntilDate": "2023-10-15"},
     { "_id": "A103", "title": "A3 - JS +REACT", "course": "RS101" 
-    ,"dueDate": "Nov 1 at 11:59pm", "points": "100 pts", "availableFromDate": "Sep 1 ",
-    "availableUntilDate": "Nov 18 "},
+    ,"dueDate": "2023-11-11", "points": "100 pts", "availableFromDate": "2023-11-01",
+    "availableUntilDate": "2023-11-11"},
     { "_id": "A104", "title": "A4 - STATE + REDUX", "course": "RS101"
-    ,"dueDate": "Nov 10 at 11:59pm", "points": "100 pts","availableFromDate": "Sep 1 ",
-    "availableUntilDate": "Nov 18 " },
+    ,"dueDate": "2023-11-21", "points": "100 pts","availableFromDate": "2023-11-10",
+    "availableUntilDate": "2023-11-21" },
     { "_id": "A105", "title": "A5 - NODE + SESSION", "course": "RS101" 
-    ,"dueDate": "Nov 31 at 11:59pm", "points": "100 pts","availableFromDate": "Sep 1 ",
-    "availableUntilDate": "Nov 31"},
+    ,"dueDate": "2023-11-30", "points": "100 pts","availableFromDate": "2023-11-21",
+    "availableUntilDate": "2023-11-30"},
     { "_id": "A201", "title": "Rocket Assignment", "course": "RS102" 
-    ,"dueDate": "Sep 18 at 11:59pm","points": "100 pts", "availableFromDate": "Sep 1 ",
-    "availableUntilDate": "Nov 31"},
+    ,"dueDate": "2023-09-15","points": "100 pts", "availableFromDate": "2023-09-01",
+    "availableUntilDate": "2023-09-15"},
     { "_id": "A202", "title": "Flow Analysis", "course": "RS102"
-    ,"dueDate": "Sep 18 at 11:59pm","points": "100 pts" ,"availableFromDate": "Sep 1 ",
-    "availableUntilDate": "Nov 31"},
+    ,"dueDate": "2023-09-25","points": "100 pts" ,"availableFromDate": "2023-09-15",
+    "availableUntilDate": "2023-09-25"},
     { "_id": "A203", "title": "Heating Analysis", "course": "RS102"
-    ,"dueDate": "Sep 18 at 11:59pm","points": "100 pts" ,"availableFromDate": "Sep 1 ",
-    "availableUntilDate": "Nov 31"},
+    ,"dueDate": "2023-09-15","points": "100 pts" ,"availableFromDate": "2023-09-01",
+    "availableUntilDate": "2023-09-25"},
     { "_id": "A301", "title": "Structural Design Task", "course": "RS103"
-    ,"dueDate": "Sep 18 at 11:59pm","points": "100 pts","availableFromDate": "Sep 1 ",
-    "availableUntilDate": "Nov 31" },
+    ,"dueDate": "2023-09-15","points": "100 pts","availableFromDate": "2023-09-01",
+    "availableUntilDate": "2023-10-15" },
     { "_id": "A302", "title": "Orbital Calculations", "course": "RS103"
-    ,"dueDate": "Sep 18 at 11:59pm","points": "100 pts" ,"availableFromDate": "Sep 1 ",
-    "availableUntilDate": "Nov 31"},
+    ,"dueDate": "2023-09-25","points": "100 pts" ,"availableFromDate": "2023-09-15",
+    "availableUntilDate": "2023-09-25"},
     { "_id": "A303", "title": "Systems Engineering Exam", "course": "RS103" 
-    ,"dueDate": "Sep 18 at 11:59pm","points": "100 pts","availableFromDate": "Sep 1 ",
-    "availableUntilDate": "Sep 31"}
+    ,"dueDate": "2023-10-15","points": "100 pts","availableFromDate": "2023-10-01",
+    "availableUntilDate": "2023-10-15"}
   ]

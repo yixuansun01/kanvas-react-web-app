@@ -11,6 +11,7 @@ import {
   setAssignment,
 } from './assignmentsReducer'; 
 import { KanbasState } from '../../store';
+import "./index.css";
 
 function Assignments() {
   const { courseId } = useParams();
@@ -85,10 +86,15 @@ function Assignments() {
                 <div  key={assignment._id}>
                 <FaEllipsisV className="me-2" />
                 <FaRegEdit className="icon-class" style={{ color: 'green', marginRight: '1em' }} />
-                 <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>{assignment.title}</Link>
+                 <button onClick={() => handleEditAssignment(assignment)}
+                  style={{ border: 'none', backgroundColor: 'white'}}>
+                    {assignment.title}
+                  </button>
                  <span className="float-end" style={{ marginBottom: '0.5em' }}>
-                 <button onClick={() => handleEditAssignment(assignment)}>Edit</button>
-                <button onClick={() => handleDeleteAssignment(assignment._id)}>Delete</button>
+                 <button onClick={() => handleEditAssignment(assignment)}
+                 id="bluebutton">Edit</button>
+                <button onClick={() => handleDeleteAssignment(assignment._id)}
+                id="redbutton">Delete</button>
                   <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" />
                   </span>
                     <div className="text-muted" style={{ marginTop: '0.5em' }}>

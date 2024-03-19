@@ -32,19 +32,19 @@ function ModuleList() {
           <option>Publish All</option>
           <option>Unpublish All</option>
         </select>
-        <button style={{ backgroundColor: 'red', color: 'white', marginRight: '10px' }}>+ Modules</button>
         <FaEllipsisV className="ms-2" />
-      </div>
+      </div >
       <br />
       <hr />
           
       <ul className="list-group wd-modules">
       <li className="list-group-item" style={{ backgroundColor: 'white' , borderLeft: '2px solid black'}} >
-        
+       
         <input value={module.name}
           onChange={(e) =>  dispatch(setModule({ ...module, name: e.target.value }))}
-            style={{ border: '1px solid black', marginLeft: '10px' }}    
+            style={{ border: '1px solid black', marginLeft: '10px', width: '400px', height: '40px' }}    
         />
+        
         <button id="greenbutton"
          onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
           Add</button>
@@ -53,17 +53,18 @@ function ModuleList() {
          onClick={() => dispatch(updateModule(module))} >
                 Update
         </button>
-
+        
         <div id="customBorderDiv" >
         <textarea value={module.description}
           onChange={(e) =>
             dispatch(setModule({ ...module, description: e.target.value }))
           }
-            style={{ border: '1px solid black' }}
+            style={{ border: '1px solid black' , width: '400px', height: '80px'}}
         />
         </div>
+         
       </li>
-
+    
         {moduleList
          .filter((module) => module.course === courseId)
         .map((module, index) => (
