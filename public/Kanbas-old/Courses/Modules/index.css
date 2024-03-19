@@ -21,6 +21,10 @@
   border-left: 1px solid gray !important;
 }
 
+#customBorderDiv {
+  border-left: 1px solid red !important;
+}
+
 .wd-modules > li > ul > li {
   padding: 5px;
   border-top: 1px solid gray !important;

@@ -1,47 +1,109 @@
-import React from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
-import { FaCheckCircle, FaEllipsisV } from 'react-icons/fa';
-import { assignments } from "../../../Database";
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams, Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { addAssignment, updateAssignment, setAssignment  } from '../assignmentsReducer';
+import { KanbasState } from '../../../store'
 function AssignmentEditor() {
-  const { assignmentId } = useParams();
-  const assignment = assignments.find(
-    (assignment) => assignment._id === assignmentId);
-  const { courseId } = useParams();
+  const { assignmentId, courseId } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  // Select the assignment from the Redux store if editing
+  const assignments = useSelector((state: KanbasState) => state.assignmentsReducer.assignments);
+const assignment = assignments.find((a) => a._id === assignmentId) || {};
+
+  // Local state for the form, defaulted to the assignment being edited or empty for new
+  const [formState, setFormState] = useState({
+    title: '',
+    description: '',
+    points: '',
+    dueDate: '',
+    availableFromDate: '',
+    availableUntilDate: '',
+  });
+
+  useEffect(() => {
+    if (assignmentId && assignment) {
+      setFormState(assignment);
+    }
+  }, [assignmentId, assignment]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormState((prev) => ({ ...prev, [name]: value }));
+  };
+
+
   const handleSave = () => {
-    console.log("Actually saving assignment TBD in later assignments");
+    // Validate form data here if necessary
+    if (assignmentId) {
+      // Dispatch an action to update the assignment
+      dispatch(updateAssignment({ ...formState, _id: assignmentId }));
+    } else {
+      // Dispatch an action to add a new assignment
+      dispatch(addAssignment({ ...formState, _id: new Date().getTime().toString() }));
+    }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
-  return (
-    <><div className="col d-flex justify-content-end"  style={{ marginTop: '20px' }}>
-          <FaCheckCircle style={{ color: 'green' }} />
 
-          <span style={{ color: 'green', marginRight: '20px' }}>
-              Published
-          </span>
-          <FaEllipsisV />
-         
-      </div>
-      <hr/>
-      <div>
-              <h2>Assignment Name</h2>
-              <input value={assignment?.title}
-                  className="form-control mb-2" />
-            <hr/>
-            
-              <button onClick={handleSave} className="btn btn-danger ms-2 float-end">
-                  Save
-              </button>
-              <Link to={`/Kanbas/Courses/${courseId}/Assignments`}
-                  className="btn  float-end">
-                  Cancel
-              </Link>  
-              <div style={{ clear: 'both' }}></div>
-        </div>
-        
-          <hr/>
-         </>
+  // Fields: name, description, points, dueDate, availableFromDate, availableUntilDate
+  return (
+    <div className="assignment-editor">
+      <h2>{assignmentId ? 'Edit' : 'New'} Assignment</h2>
+      <input
+        name="title"
+        value={formState.title}
+        onChange={(e) => setAssignment({
+          ...formState, name: e.target.value })}
+
+        className="form-control mb-2"
+        placeholder="Assignment Title"
+      />
+      <textarea
+        name="description"
+        value={formState.description}
+        onChange={(e) => setAssignment({
+          ...formState, name: e.target.value })}
+        className="form-control mb-2"
+        placeholder="Description"
+      />
+      <input
+        name="points"
+        type="number"
+        value={formState.points}
+        onChange={(e) => setAssignment({
+          ...formState, name: e.target.value })}
+        className="form-control mb-2"
+        placeholder="Points"
+      />
+      <input
+        name="dueDate"
+        type="date"
+        value={formState.dueDate}
+        onChange={(e) => setAssignment({
+          ...formState, name: e.target.value })}
+        className="form-control mb-2"
+      />
+      <input
+        name="availableFromDate"
+        type="date"
+        value={formState.availableFromDate}
+        onChange={(e) => setAssignment({
+          ...formState, name: e.target.value })}
+        className="form-control mb-2"
+      />
+      <input
+        name="availableUntilDate"
+        type="date"
+        value={formState.availableUntilDate}
+        onChange={(e) => setAssignment({
+          ...formState, name: e.target.value })}
+        className="form-control mb-2"
+      />
+      <button onClick={handleSave} className="btn btn-success">Save</button>
+      <Link to={`/Kanbas/Courses/${courseId}/Assignments`} className="btn btn-secondary">Cancel</Link>
+    </div>
   );
 }
-export default AssignmentEditor;
 
+export default AssignmentEditor;

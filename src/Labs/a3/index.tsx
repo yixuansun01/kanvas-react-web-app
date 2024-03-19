@@ -8,11 +8,22 @@ import Highlight from "./Highlight";
 import Add from "./Add";
 import TodoItem from "./todos/TodoItem"
 import TodoList from "./todos/TodoList"
+import { useSelector } from "react-redux";
+import { LabState } from "../store";
 
 function Assignment3() {
+   const { todos } = useSelector((state: LabState) => state.todosReducer);
     return (
        <div>
           <h2>Assignment 3</h2>
+          <ul className="list-group">
+         {todos.map((todo) => (
+            <li className="list-group-item" key={todo.id}>
+               {todo.title}
+            </li>
+            ))}
+          </ul>
+
           <JavaScript/>
           <PathParameters/>
           <Classes/>
@@ -26,6 +37,14 @@ function Assignment3() {
          <h2>To do Items</h2>
          <TodoItem/>
          <TodoList/>
+         
+        {todos.map((todo) => (
+          <li className="list-group-item" key={todo.id}>
+            {todo.title}
+          </li>
+        ))}
+      
+
        </div>
     );
  }

@@ -1,13 +1,44 @@
 import React from "react";
 import { FaCheckCircle, FaEllipsisV, FaPlusCircle } from "react-icons/fa";
 import { FaRegEdit } from 'react-icons/fa';
-import { Link, useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { assignments } from "../../Database";
+import { useParams, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  addAssignment, 
+  deleteAssignment,
+} from './assignmentsReducer'; 
+import { KanbasState } from '../../store';
 
 function Assignments() {
   const { courseId } = useParams();
-  const assignmentList = assignments.filter(
-    (assignment) => assignment.course === courseId);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  
+  // Using KanbasState to get the correct state shape
+  const assignments = useSelector((state: KanbasState) => 
+    state.assignmentsReducer.assignments.filter(
+      (assignment) => assignment.course === courseId
+  ));
+
+  const handleAddAssignment = () => {
+    // Navigate to the AssignmentEditor to create a new assignment
+    navigate(`/Kanbas/Courses/${courseId}/Assignments/new`);
+  };
+
+  const handleEditAssignment = (assignmentId: string) => {
+    // Navigate to the AssignmentEditor for editing an existing assignment
+    navigate(`/Kanbas/Courses/${courseId}/Assignments/${assignmentId}`);
+  };
+
+  const handleDeleteAssignment = (assignmentId: string) => {
+    // Confirmation dialog before deleting an assignment
+    if (window.confirm('Are you sure you want to delete this assignment?')) {
+      dispatch(deleteAssignment(assignmentId));
+    }
+  };
+
   return (
     <>
       {/* {  Add buttons and other fields here } */}
@@ -23,7 +54,9 @@ function Assignments() {
           <div className="col-md">
             <div className="float-end">
                 <button>+ Group </button>
-                <button style={{backgroundColor: "red", color: "white"}}>+ Assignment</button>
+                <button style={{backgroundColor: "red", color: "white"}}
+                onClick={handleAddAssignment}>
+                  + Assignment</button>
                 <FaEllipsisV className="ms-2" />
             </div>
           </div>
@@ -40,14 +73,17 @@ function Assignments() {
             </span>
           </div>
           <ul className="list-group">
-            {assignmentList.map((assignment) => (
+            {assignments.map((assignment) => (
               <li className="list-group-item">
-                <div>
+                <div  key={assignment._id}>
                 <FaEllipsisV className="me-2" />
                 <FaRegEdit className="icon-class" style={{ color: 'green', marginRight: '1em' }} />
                  <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>{assignment.title}</Link>
                  <span className="float-end" style={{ marginBottom: '0.5em' }}>
-                  <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" /></span>
+                 <span onClick={() => handleEditAssignment(assignment._id)}>Edit</span>
+          <span onClick={() => handleDeleteAssignment(assignment._id)}>Delete</span>
+                  <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" />
+                  </span>
                     <div className="text-muted" style={{ marginTop: '0.5em' }}>
                         <span className="text-danger" style={{ marginLeft: '2.5em' }}>Multiple Modules</span> |
                         Due {assignment.dueDate} | {assignment.points}

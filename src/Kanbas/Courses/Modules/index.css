@@ -30,7 +30,33 @@
 .wd-modules > li {
   margin-bottom: 20px;
 }
+#customBorderDiv {
+  border-left: none !important;
+}
+#redbutton {
+  background-color: red;
+  color: white;
+  border-radius: 8px; 
+  padding: 8px 15px; 
+  
+}
 
+#bluebutton {
+  background-color: blue;
+  color: white;
+  border-radius: 8px; 
+  padding: 8px 15px; 
+  
+}
+
+#greenbutton {
+  margin: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 8px; 
+  padding: 8px 15px; 
+  
+}
 /* styles.css */
 
 .header {

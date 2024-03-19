@@ -9,7 +9,7 @@ import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
 
 
-function Courses() {
+function Courses({ courses }: { courses: any[]; }) {
   const { assignmentId } = useParams();
   const assignment = assignments.find(
     (assignment) => assignment._id === assignmentId);
