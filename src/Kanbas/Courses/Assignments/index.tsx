@@ -19,8 +19,13 @@ function Assignments() {
   // Using KanbasState to get the correct state shape
   const assignments = useSelector((state: KanbasState) => 
     state.assignmentsReducer.assignments.filter(
-      (assignment) => assignment.course === courseId
+    (assignment) => assignment.course === courseId
   ));
+
+  // const assignments = useSelector((state: KanbasState) => 
+  //   state.assignmentsReducer.assignments.filter(
+  //     (assignment) => assignment.course === courseId
+  // ));
 
   const handleAddAssignment = () => {
     // Navigate to the AssignmentEditor to create a new assignment

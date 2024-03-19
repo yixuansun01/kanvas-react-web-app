@@ -46,7 +46,8 @@ function ModuleList() {
             style={{ border: '1px solid black', marginLeft: '10px' }}    
         />
         <button id="greenbutton"
-         onClick={() => dispatch(addModule({ ...module, course: courseId }))}>Add</button>
+         onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+          Add</button>
          
          <button id="bluebutton" 
          onClick={() => dispatch(updateModule(module))} >
