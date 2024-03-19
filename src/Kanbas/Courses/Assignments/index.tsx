@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   addAssignment, 
   deleteAssignment,
+  setAssignment,
 } from './assignmentsReducer'; 
 import { KanbasState } from '../../store';
 
@@ -32,9 +33,10 @@ function Assignments() {
     navigate(`/Kanbas/Courses/${courseId}/Assignments/new`);
   };
 
-  const handleEditAssignment = (assignmentId: string) => {
+  const handleEditAssignment = (assignment: any ) => {
     // Navigate to the AssignmentEditor for editing an existing assignment
-    navigate(`/Kanbas/Courses/${courseId}/Assignments/${assignmentId}`);
+    dispatch(setAssignment(assignment));
+    navigate(`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`);
   };
 
   const handleDeleteAssignment = (assignmentId: string) => {
@@ -85,8 +87,8 @@ function Assignments() {
                 <FaRegEdit className="icon-class" style={{ color: 'green', marginRight: '1em' }} />
                  <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>{assignment.title}</Link>
                  <span className="float-end" style={{ marginBottom: '0.5em' }}>
-                 <span onClick={() => handleEditAssignment(assignment._id)}>Edit</span>
-          <span onClick={() => handleDeleteAssignment(assignment._id)}>Delete</span>
+                 <button onClick={() => handleEditAssignment(assignment)}>Edit</button>
+                <button onClick={() => handleDeleteAssignment(assignment._id)}>Delete</button>
                   <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" />
                   </span>
                     <div className="text-muted" style={{ marginTop: '0.5em' }}>

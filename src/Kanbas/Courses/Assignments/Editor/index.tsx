@@ -13,31 +13,6 @@ function AssignmentEditor() {
     state.assignmentsReducer.assignment);
   const navigate = useNavigate();
   const dispatch = useDispatch();
- 
-// const assignment = assignments.find((a) => 
-//   a._id === assignmentId) || {};
-
-  // Local state for the form, defaulted to the assignment being edited or empty for new
-  // const [formState, setFormState] = useState({
-  //   title: '',
-  //   description: '',
-  //   points: '',
-  //   dueDate: '',
-  //   availableFromDate: '',
-  //   availableUntilDate: '',
-  // });
-
-  // useEffect(() => {
-  //   if (assignmentId && assignment) {
-  //     setFormState(assignment);
-  //   }
-  // }, [assignmentId, assignment]);
-
-  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { name, value } = e.target;
-  //   setFormState((prev) => ({ ...prev, [name]: value }));
-  // };
-
 
   const handleSave = () => {
     // Validate form data here if necessary
