@@ -100,7 +100,7 @@ function Assignments() {
                   </button>
                  <span className="float-end" style={{ marginBottom: '0.5em' }}>
                  <button onClick={() => handleEditAssignment(assignment)}
-                 id="bluebutton">Edit</button>
+                 id="bluebutton">Edit Update</button>
                 <button onClick={() => handleDeleteAssignment(assignment._id)}
                 id="redbutton">Delete</button>
                   <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" />
