@@ -3,7 +3,7 @@ import { useNavigate, useParams, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { addAssignment, updateAssignment, setAssignment  } from '../assignmentsReducer';
 import { KanbasState } from '../../../store'
-
+import * as client from "../service";
 
 function AssignmentEditor() {
   const { assignmentId, courseId } = useParams();
@@ -16,17 +16,21 @@ function AssignmentEditor() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleSave = () => {
-    // Validate form data here if necessary
+  const handleSave = async() => {
     if (assignmentId && assignmentId !== "new") {
       // Dispatch an action to update the assignment
-      
-      dispatch(updateAssignment({ ...assignment, _id: assignmentId }));
+      const status = await client.updateAssignment(assignment);
+      dispatch(updateAssignment(assignment));
+      //dispatch(updateAssignment({ ...assignment, _id: assignmentId }));
     } else {
       // Dispatch an action to add a new assignment
       
-      dispatch(addAssignment({ ...assignment,
-         _id: new Date().getTime().toString() ,course : courseId}));
+      // dispatch(addAssignment({ ...assignment,
+      //    _id: new Date().getTime().toString() ,course : courseId}));
+      client.createAssignment(courseId, assignment).then((assignment) => {
+        dispatch(addAssignment(assignment));
+      });
+  
     }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };

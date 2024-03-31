@@ -1,33 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaCheckCircle, FaEllipsisV, FaPlusCircle } from "react-icons/fa";
 import { FaRegEdit } from 'react-icons/fa';
 import { Link} from "react-router-dom";
-import { assignments } from "../../Database";
+//import { assignments } from "../../Database";
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   addAssignment, 
   deleteAssignment,
   setAssignment,
+  setAssignments,
 } from './assignmentsReducer'; 
 import { KanbasState } from '../../store';
 import "./index.css";
+import * as client from "./service";
 
 function Assignments() {
   const { courseId } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  
+  // new a5 modify-read
+  useEffect(() => {
+    client.findAssignmentsForCourse(courseId)
+      .then((assignments) =>
+        dispatch(setAssignments(assignments))
+    );
+  }, [courseId]);
+
   // Using KanbasState to get the correct state shape
   const assignments = useSelector((state: KanbasState) => 
     state.assignmentsReducer.assignments.filter(
     (assignment) => assignment.course === courseId
   ));
 
-  // const assignments = useSelector((state: KanbasState) => 
-  //   state.assignmentsReducer.assignments.filter(
-  //     (assignment) => assignment.course === courseId
-  // ));
 
   const handleAddAssignment = () => {
     // Navigate to the AssignmentEditor to create a new assignment
@@ -43,7 +48,10 @@ function Assignments() {
   const handleDeleteAssignment = (assignmentId: string) => {
     // Confirmation dialog before deleting an assignment
     if (window.confirm('Are you sure you want to delete this assignment?')) {
-      dispatch(deleteAssignment(assignmentId));
+      client.deleteAssignment(assignmentId).then((status) => {
+        dispatch(deleteAssignment(assignmentId));
+      });
+      // dispatch(deleteAssignment(assignmentId));
     }
   };
 
