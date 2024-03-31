@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import "./index.css";
 
 import { modules } from "../../Database";
@@ -10,16 +10,41 @@ import {
   deleteModule,
   updateModule,
   setModule,
+  setModules,
 } from "./reducer";
 import { KanbasState } from "../../store";
+import * as client from "./client";
 
 function ModuleList() {
   const { courseId } = useParams();
+  useEffect(() => {
+    client.findModulesForCourse(courseId)
+      .then((modules) =>
+        dispatch(setModules(modules))
+    );
+  }, [courseId]);
+
   const moduleList = useSelector((state: KanbasState) => 
     state.modulesReducer.modules);
   const module = useSelector((state: KanbasState) => 
     state.modulesReducer.module);
   const dispatch = useDispatch();
+  const handleAddModule = () => {
+    client.createModule(courseId, module).then((module) => {
+      dispatch(addModule(module));
+    });
+  };
+
+  const handleDeleteModule = (moduleId: string) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
+
 
 
   return (
@@ -45,12 +70,15 @@ function ModuleList() {
             style={{ border: '1px solid black', marginLeft: '10px', width: '400px', height: '40px' }}    
         />
         
-        <button id="greenbutton"
+        {/* <button id="greenbutton"
          onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+          Add</button> */}
+        <button id="greenbutton"
+         onClick={handleAddModule}>
           Add</button>
          
          <button id="bluebutton" 
-         onClick={() => dispatch(updateModule(module))} >
+         onClick={handleUpdateModule} >
                 Update
         </button>
         
@@ -73,8 +101,13 @@ function ModuleList() {
               <FaEllipsisV className="me-2" />
               {module.name}
               <span className="float-end">
-              <button
+              {/* <button
                onClick={() => dispatch(deleteModule(module._id))}
+               id="redbutton">
+               Delete
+              </button > */}
+              <button
+               onClick={() => handleDeleteModule(module._id)}
                id="redbutton">
                Delete
               </button >
