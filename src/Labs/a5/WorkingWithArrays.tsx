@@ -152,6 +152,7 @@ function WorkingWithArrays() {
                     ...todo, completed: e.target.checked })} />
                 Completed
                </label>
+              <h5>lab part 3.4 and 3.5 are together</h5>
               <br/>
               <button onClick={postTodo}> Post Todo </button>
               <br/>
