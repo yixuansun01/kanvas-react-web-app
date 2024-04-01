@@ -220,7 +220,7 @@ function WorkingWithArrays() {
               <a href={`${API}/${todo.id}/description/${todo.description}`} >
                 Update description 
               </a>
-      <h5>3.4.5 Fetching Arrays and 3.4.6 delete</h5>
+     
       
       
       </div>
