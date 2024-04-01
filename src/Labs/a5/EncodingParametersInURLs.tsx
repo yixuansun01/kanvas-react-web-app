@@ -60,10 +60,10 @@ function EncodingParametersInURLs() {
         Substract {a} - {b}
       </a>
       <h3>Query Parameters</h3>
-      <a href="${API_BASE}/a5/calculator?operation=add&a=34&b=23">
+      <a href={`${API_BASE}/a5/calculator?operation=add&a=34&b=23`}>
         Click here to test add </a>
       <br/>
-      <a href="${API_BASE}/a5/calculator?operation=subtract&a=34&b=23">
+      <a href={`${API_BASE}/a5/calculator?operation=subtract&a=34&b=23`}>
         Click here to test substract</a>
       <br/>
         <a className="btn btn-primary"
