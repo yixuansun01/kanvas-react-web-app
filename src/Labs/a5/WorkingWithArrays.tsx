@@ -103,26 +103,31 @@ function WorkingWithArrays() {
       <div>
         <h3>Working with Arrays</h3>
         <h4>Retrieving Arrays</h4>
-        <a href={API}>
+        <a className="btn btn-primary"
+        href={API}>
           Get Todos
         </a>
         <h4>Retrieving an Item from an Array by ID</h4>
           <input value={todo.id}
             onChange={(e) => setTodo({ ...todo,
               id: Number(e.target.value) })}/>
-          <a href={`${API}/${todo.id}`}>
+          <a className="btn btn-primary"
+          href={`${API}/${todo.id}`}>
             Get Todo by ID
           </a>
           <h3>Filtering Array Items</h3>
-          <a href={`${API}?completed=true`}>
+          <a className="btn btn-primary"
+          href={`${API}?completed=true`}>
             Get Completed Todos
           </a>
           <h3>Creating new Items in an Array</h3>
-            <a href={`${API}/create`}>
+            <a className="btn btn-primary"
+            href={`${API}/create`}>
               Create Todo
             </a>
           <h3>Deleting from an Array</h3>
-            <a href={`${API}/${todo.id}/delete`}>
+            <a className="btn btn-primary"
+            href={`${API}/${todo.id}/delete`}>
               Delete Todo with ID = {todo.id}
             </a>
             <h2>Working with Arrays</h2>
@@ -134,73 +139,12 @@ function WorkingWithArrays() {
                 onChange={(e) => setTodo({
                   ...todo, title: e.target.value })}/>
               <h3>Updating an Item in an Array</h3>
-              <a href={`${API}/${todo.id}/title/${todo.title}`} >
+              <a className="btn btn-primary"
+              href={`${API}/${todo.id}/title/${todo.title}`} >
                 Update Title to {todo.title}
               </a>
               <br/>
-              <textarea value={todo.description} 
-                onChange={(e) => setTodo({ ...todo,
-                  description: e.target.value })} />
-              <br/>
-              <input value={todo.due} type="date"
-                onChange={(e) => setTodo({
-                  ...todo, due: e.target.value })} />
-              <br/>
-              <label>
-                <input  type="checkbox"   checked={todo.completed}
-                  onChange={(e) => setTodo({
-                    ...todo, completed: e.target.checked })} />
-                Completed
-               </label>
-              <h3>lab part 3.4 and 3.5 are together</h3>
-              <br/>
-              <button onClick={postTodo}> Post Todo </button>
-              <br/>
-              <button onClick={updateTodo}>
-                Update Todo
-              </button>
-
-              {/* <h5>LAB-3.4.5& 3.4.6 &3.4.7 &3.4.8</h5> */}
-              <br/>
-       <button onClick={updateTitle} >
-        Update Title
-        </button>
-      <br/>
-      <button onClick={createTodo} >
-        Create Todo
-      </button>
-      {errorMessage && (
-        <div className="alert alert-danger mb-2 mt-2">
-          {errorMessage}
-        </div>
-      )}
-
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id} className="list-group-item">
-             <input checked={todo.completed}
-              type="checkbox" readOnly />
-            {todo.title}
-            <p>{todo.description}</p>
-            <p>{todo.due}</p>
-            <button onClick={() => fetchTodoById(todo.id)} >
-            Edit
-          </button>
-            <button onClick={() => removeTodo(todo)}  >
-              Remove
-            </button>
-            <button onClick={() => deleteTodo(todo)}
-              className="btn btn-danger ms-2">
-              Delete
-            </button>
-
-            <br/>
-            <br/>
-          </li>
-        ))}
-      </ul>
-     
-              <h2>3.3.7 Edit completed and description</h2>
+              <h4>3.3.7 Edit completed and description</h4>
               <h5>ID</h5>
               <input type="number" value={todo.id}
                 onChange={(e) => setTodo({
@@ -221,7 +165,89 @@ function WorkingWithArrays() {
               <a href={`${API}/${todo.id}/description/${todo.description}`} >
                 Update description 
               </a>
+              <br/>
+              <h3>lab part 3.4 and 3.5 are together</h3>
+              <br/>
+            <h5>ID</h5>
+              <input type="number" value={todo.id}
+                onChange={(e) => setTodo({
+                  ...todo, id: Number(e.target.value) })}/>
+               <br/> 
+            <h5>title</h5>  
+              <input type="text" value={todo.title}
+                onChange={(e) => setTodo({
+                  ...todo, title: e.target.value })}/> 
+              <h5>description</h5>
+              <textarea value={todo.description} 
+                onChange={(e) => setTodo({ ...todo,
+                  description: e.target.value })} />
+              <br/>
+              
+              <input value={todo.due} type="date"
+                onChange={(e) => setTodo({
+                  ...todo, due: e.target.value })} />
+              <br/>
+              <label>
+                <input  type="checkbox"   checked={todo.completed}
+                  onChange={(e) => setTodo({
+                    ...todo, completed: e.target.checked })} />
+                Completed
+               </label>
+              <br/>
+              <button onClick={postTodo}> Post Todo </button>
+              <br/>
+              <button onClick={updateTodo}>
+                Update Todo
+              </button>
+
+              {/* <h5>LAB-3.4.5& 3.4.6 &3.4.7 &3.4.8</h5> */}      
+      <br/>
+      <button className="btn btn-primary"
+      onClick={createTodo} >
+        Create Todo
+      </button>
+      <br/>
+      <button className="btn btn-success"
+       onClick={updateTitle} >
+        Update Title
+        </button>
+      {errorMessage && (
+        <div className="alert alert-danger mb-2 mt-2">
+          {errorMessage}
+        </div>
+      )}
+
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id} className="list-group-item">
+             <input checked={todo.completed}
+              type="checkbox" readOnly />
+            {todo.title}
+            <p>{todo.description}</p>
+            <p>{todo.due}</p>
+            <button 
+            style={{ backgroundColor: 'yellow', color: 'black' }}
+            onClick={() => fetchTodoById(todo.id)} >
+            Edit
+          </button>
+            <button className="btn btn-danger"
+            onClick={() => removeTodo(todo)}  >
+              Remove
+            </button>
+            <button onClick={() => deleteTodo(todo)}
+              className="btn btn-danger ms-2">
+              Delete
+            </button>
+
+            <br/>
+            <br/>
+          </li>
+        ))}
+      </ul>
      
+             
+      <br/>
+      <br/>
       
       
       </div>

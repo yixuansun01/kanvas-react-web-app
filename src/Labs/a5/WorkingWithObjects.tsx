@@ -36,7 +36,7 @@ function WorkingWithObjects() {
   return (
     <div>
       <h3>Working With Objects</h3>
-      <h3>Modifying Properties</h3>
+      <h4>Modifying Properties</h4>
       <input onChange={(e) => setAssignment({
             ...assignment, title: e.target.value })}
         value={assignment.title} type="text" />
@@ -58,16 +58,19 @@ function WorkingWithObjects() {
       </a> */}
 
       <h4>Retrieving Objects</h4>
-      <a href={`${API_BASE}/a5/assignment`}>
+      <a className="btn btn-primary"
+      href={`${API_BASE}/a5/assignment`}>
         Get Assignment
       </a>
       <h4>Retrieving Properties</h4>
-      <a href={`${API_BASE}/a5/assignment/title`}>
+      <a className="btn btn-primary"
+      href={`${API_BASE}/a5/assignment/title`}>
         Get Title
       </a>
 
       <h4>Modifying Properties</h4>
-      <a href={`${ASSIGNMENT_URL}/title/${assignment.title}`}>
+      <a className="btn btn-primary"
+      href={`${ASSIGNMENT_URL}/title/${assignment.title}`}>
         Update Title
       </a>
       <input type="text" 
@@ -84,17 +87,20 @@ function WorkingWithObjects() {
       Get Module Name
       </a> */}
        <h4>3.2.4 modules</h4>
-      <a href={`${API_BASE}/a5/module`}>
+      <a 
+      href={`${API_BASE}/a5/module`}>
         Get Module
       </a>
       <br/>
-      <a href={`${API_BASE}/a5/module/name`}>
+      <a 
+      href={`${API_BASE}/a5/module/name`}>
       Get Module Name
       </a>
 
 
     <h5>Modifying Module Name</h5>
-      <a href={`${MODULE_URL}/name/${module.name}`}>Update Module Name</a>
+      <a 
+      href={`${MODULE_URL}/name/${module.name}`}>Update Module Name</a>
       <input
         type="text"
         onChange={(e) => setModule({ ...module, name: e.target.value })}
