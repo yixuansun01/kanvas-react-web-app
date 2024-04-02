@@ -55,17 +55,27 @@ function WorkingWithArrays() {
   //   setTodos(todos.filter((t) => t.id !== todo.id));
   // };
 
-  const deleteTodo = async (todo: any) => { // Adjust the type for `todo`
+  // const deleteTodo = async (todo: any) => { // Adjust the type for `todo`
+  //   try {
+  //     await axios.delete(`${API}/${todo.id}`);
+  //     setTodos(todos.filter((t) => t.id !== todo.id));
+  //   } catch (error: any) { 
+  //     console.log(error);
+  //     if (error.response && error.response.data) {
+  //       setErrorMessage(error.response.data.message);
+  //     } else {
+  //       setErrorMessage("An unexpected error occurred.");
+  //     }
+  //   }
+  // };
+  const deleteTodo = async (todo:any) => {
     try {
-      await axios.delete(`${API}/${todo.id}`);
+      const response = await axios.delete(
+        `${API}/${todo.id}`);
       setTodos(todos.filter((t) => t.id !== todo.id));
-    } catch (error: any) { // Consider using a more specific type or type guard
+    } catch (error:any) {
       console.log(error);
-      if (error.response && error.response.data) {
-        setErrorMessage(error.response.data.message);
-      } else {
-        setErrorMessage("An unexpected error occurred.");
-      }
+      setErrorMessage(error.response.data.message);
     }
   };
 
@@ -74,24 +84,35 @@ function WorkingWithArrays() {
   //   setTodos(todos.map((t) => (t.id === todo.id ? todo : t)));
   // };
 
+  // const updateTodo = async () => {
+  //   try {
+  //     const response = await axios.put(`${API}/${todo.id}`, todo);
+  //     setTodos(todos.map((t) => (t.id === todo.id ? response.data : t)));
+  //   } catch (error) {
+  //     console.log(error);
+  //     if (axios.isAxiosError(error)) {
+  //       if (error.response && error.response.data && error.response.data.message) {
+  //         setErrorMessage(error.response.data.message);
+  //       } else {
+  //         setErrorMessage("An error occurred while updating the todo.");
+  //       }
+  //     } else {
+  //       setErrorMessage("An unexpected error occurred.");
+  //     }
+  //   }
+  // };
   const updateTodo = async () => {
     try {
-      const response = await axios.put(`${API}/${todo.id}`, todo);
-      setTodos(todos.map((t) => (t.id === todo.id ? response.data : t)));
-    } catch (error) {
+      const response = await axios.put(
+        `${API}/${todo.id}`, todo);
+      setTodos(todos.map((t) => (
+        t.id === todo.id ? todo : t)));
+    } catch (error:any) {
       console.log(error);
-      if (axios.isAxiosError(error)) {
-        if (error.response && error.response.data && error.response.data.message) {
-          setErrorMessage(error.response.data.message);
-        } else {
-          setErrorMessage("An error occurred while updating the todo.");
-        }
-      } else {
-        setErrorMessage("An unexpected error occurred.");
-      }
+      setErrorMessage(error.response.data.message);
     }
   };
-  
+
 
 
   useEffect(() => {
@@ -194,7 +215,8 @@ function WorkingWithArrays() {
                 Completed
                </label>
               <br/>
-              <button onClick={postTodo}> Post Todo </button>
+              <button style={{ backgroundColor: 'yellow', color: 'black' }}
+              onClick={postTodo}> Post Todo </button>
               <br/>
               <button onClick={updateTodo}>
                 Update Todo
