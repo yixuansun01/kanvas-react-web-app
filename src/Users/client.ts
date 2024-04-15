@@ -2,17 +2,21 @@ import axios from "axios";
 export const BASE_API = process.env.REACT_APP_BASE_API_URL;
 export const USERS_API = `${BASE_API}/api/users`;
 
-// below is 4.1 code
+// below is 4.1 code- from a6 doc
 //export const USERS_API = process.env.REACT_APP_API_URL;
 // const api = axios.create({
 //   withCredentials: true
 // });
 
+// old local version can 
+// const axiosWithCredentials = axios.create({
+//   baseURL: "http://localhost:4000/api",
+//   withCredentials: true
+// });
 const axiosWithCredentials = axios.create({
-  baseURL: "http://localhost:4000/api",
+  baseURL: `${BASE_API}/api`,
   withCredentials: true
 });
-
 
 export interface User { _id: string; username: string; password: string; role: string;
 firstName: string, lastName: string };
