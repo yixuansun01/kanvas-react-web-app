@@ -4,6 +4,7 @@ interface Module{
   name:string;
   description: string;
   _id?: string;
+  //id?: string;
   course: string;
   lesson:[];
 }
@@ -36,6 +37,7 @@ const modulesSlice = createSlice({
       state.modules = state.modules.filter(
         (module) => module._id !== action.payload
       );
+     
     },
     updateModule: (state, action) => {
       state.modules = state.modules.map((module) => {

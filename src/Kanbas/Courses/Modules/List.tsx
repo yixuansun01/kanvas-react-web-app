@@ -36,6 +36,7 @@ function ModuleList() {
   };
 
   const handleDeleteModule = (moduleId: string) => {
+    console.log(moduleId);
     client.deleteModule(moduleId).then((status) => {
       dispatch(deleteModule(moduleId));
     });

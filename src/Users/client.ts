@@ -13,6 +13,7 @@ export const USERS_API = `${BASE_API}/api/users`;
 //   baseURL: "http://localhost:4000/api",
 //   withCredentials: true
 // });
+
 const axiosWithCredentials = axios.create({
   baseURL: `${BASE_API}/api`,
   withCredentials: true
@@ -40,7 +41,7 @@ export const profile = async () => {
   };
   export const findAllUsers = async () => {
     const response = await axiosWithCredentials.get("/users");
-    console.log(response.data);
+    //console.log(response.data);
     return response.data;
   };
   //
